@@ -1,6 +1,7 @@
+
 export default function Navbar() {
   return (
-    <nav style={{ background: "white", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}>
+    <nav style={{ background: "#E8DFCA", boxShadow: "0 2px 4px rgba(0,0,0,0.1)" }}>
       <div style={{
         maxWidth: "1200px",
         margin: "0 auto",
@@ -17,10 +18,10 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div style={{ display: "flex", gap: "24px" }}>
-          <a href="/" style={{ color: "#374151", textDecoration: "none" }}>Home</a>
-          <a href="/about" style={{ color: "#374151", textDecoration: "none" }}>About</a>
-          <a href="/docs" style={{ color: "#374151", textDecoration: "none" }}>Docs</a>
-        </div>
+          <a href="/" className="nav-link">Home</a>
+          <a href="https://github.com/nikitamahoviya/url-shortner" className="nav-link:hover">Github</a>
+          <a href="https://www.linkedin.com/in/nikita-mahoviya-28034b171/" className="nav-link">LinkedIn</a>        
+          </div>
       </div>
     </nav>
   )
