@@ -11,7 +11,7 @@ function makeId(length = 6) {
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
 
-  const { url } = req.body || {}
+  const { url, customSlug } = req.body || {}
   if (!url || typeof url !== 'string') return res.status(400).json({ error: 'Invalid url' })
 
   // Basic validation
@@ -21,9 +21,19 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid URL format' })
   }
 
-  // create short id
-  let id = makeId()
-  while (store[id]) id = makeId()
+  let id;
+
+  if (customSlug) {
+    // Check if custom slug already exists
+    if (store[customSlug]) {
+      return res.status(400).json({ error: 'Custom slug already exists' })
+    }
+    id = customSlug
+  } else {
+    // create random short id
+    id = makeId()
+    while (store[id]) id = makeId()
+  }
 
   store[id] = { url, createdAt: Date.now() }
 

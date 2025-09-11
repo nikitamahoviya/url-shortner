@@ -20,7 +20,8 @@ export default function Navbar() {
         <div style={{ display: "flex", gap: "24px" }}>
           <a href="/" className="nav-link">Home</a>
           <a href="https://github.com/nikitamahoviya/url-shortner" className="nav-link:hover">Github</a>
-          <a href="https://www.linkedin.com/in/nikita-mahoviya-28034b171/" className="nav-link">LinkedIn</a>        
+          <a href="https://www.linkedin.com/in/nikita-mahoviya-28034b171/" className="nav-link">LinkedIn</a> 
+          <a href="/custom" className="nav-link">Custom URL</a> {/* New link */}       
           </div>
       </div>
     </nav>
